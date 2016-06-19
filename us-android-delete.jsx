@@ -10,14 +10,12 @@
 
 
 // Photoshop variables
-var docRef = app.activeDocument,
-	docName = docRef.name,
-	docPath = docRef.path,	
+var resolutionsObj = {
 
-	//this variable should be edited. Can be one of values (not index) in the array below. 
-	originalResolution = 2.0, //xhdpi
+		xxxxhdpi : {
+			density : 6.0/originalResolution
+		},
 
-	resolutionsObj = {
 		xxxhdpi : {
 			density : 4.0/originalResolution
 		},

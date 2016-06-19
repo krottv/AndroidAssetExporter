@@ -22,6 +22,11 @@ var docRef = app.activeDocument,
 	originalResolution = 2.0, //xhdpi
 
 	resolutionsObj = {
+
+		xxxxhdpi : {
+			density : 6.0/originalResolution
+		},
+
 		xxxhdpi : {
 			density : 4.0/originalResolution
 		},
