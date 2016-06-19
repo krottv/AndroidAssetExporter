@@ -1,5 +1,25 @@
 # AndroidAssetExporter
-Script file for adobe photoshop for exporting android assets as png in one click for four screen densities. You can find [complete tutorial here](https://medium.com/@neokrot/how-to-export-assets-from-psd-for-android-in-one-click-cd122ead4299#.4q74hdxxe), how to cut psd with help of this script.
+Script file for adobe photoshop for exporting android assets as png in one click for four screen densities.
+
+##What does it do?
+
+1. Duplicate focused layer to new document
+2. Trim transparent pixels
+3. May be add transparent pixels if size is specified
+4. Resize document
+5. Save it to folder (xhdpi for example)
+6. Repeat for every resolution
+
+## Installation
+1. Download the script here
+
+2. Move the **.jsx** file to your Photoshop scripts folder:
+
+	- Mac: **/Applications/Adobe Photoshop.../Presets/Scripts/**
+	- PC 64bit: **C:\Program Files\Adobe\Adobe Photoshop... (64 Bit)\Presets\Scripts\**
+	- PC 32bit: **C:\Program Files\Adobe\Adobe Photoshop...\Presets\Scripts\**
+	
+3. Optional. Create actions to make it super fast.
 
 ## Note
 * The script supposes that your original psd file is xhdpi. If you have different then open us-android-export, find originalResolution variable and set to your's. 
