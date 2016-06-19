@@ -3,6 +3,7 @@ Script file for adobe photoshop for exporting android assets as png in one click
 
 ## Note
 The script supposes that your original psd file is xhdpi. If you have different then open us-android-export, find originalResolution variable and set to your's. 
+If you want your icon to be in specific size (with transparent pixels around). Name your layer like this "icon_search:64x64" first is width, second is height.
 
 ## us-android-export 
 This script exports focused layer as png in folders xxhdpi, xhdpi, hdpi, mdpi near your .psd location. With trimming of transparent pixels.

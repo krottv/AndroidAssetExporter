@@ -53,9 +53,19 @@ function init() {
 }
 
 function deleteFile(resolution){
-	var tempDocName = app.activeDocument.activeLayer.name.replace(/\.[^\.]+$/, ''),
-		docFolder = Folder(docPath + '/drawable-' + resolution);
+	var split = activeLayer.name.split(":");
 
-	var saveFile = File(docFolder + "/" + tempDocName + ".png");
+	var fileName;
+	if(split.length != 2){
+	    fileName = activeLayer.name;
+	}else{
+	    fileName=split[0];
+	}
+	fileName = fileName.replace(/\.[^\.]+$/, '');
+
+
+	var docFolder = Folder(docPath + '/drawable-' + resolution);
+
+	var saveFile = File(docFolder + "/" + fileName + ".png");
 	saveFile.remove();
 }

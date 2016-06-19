@@ -128,8 +128,17 @@ function resizeDoc(document, resolution) {
 
 
 function dupToNewFile() {	
-	var fileName = activeLayer.name.replace(/\.[^\.]+$/, ''), 
-		calcWidth  = Math.ceil(activeLayer.bounds[2] - activeLayer.bounds[0]),
+	var split = activeLayer.name.split(":");
+
+	var fileName;
+	if(split.length != 2){
+	    fileName = activeLayer.name;
+	}else{
+	    fileName=split[0];
+	}
+	fileName = fileName.replace(/\.[^\.]+$/, '');
+
+	var calcWidth  = Math.ceil(activeLayer.bounds[2] - activeLayer.bounds[0]),
 		calcHeight = Math.ceil(activeLayer.bounds[3] - activeLayer.bounds[1]),
 		docResolution = docRef.resolution,
 		document = app.documents.add(calcWidth, calcHeight, docResolution, fileName, NewDocumentMode.RGB,
@@ -150,6 +159,14 @@ function dupToNewFile() {
 	activeLayer2.translate(-activeLayer2.bounds[0],-activeLayer2.bounds[1]);
 
 	document.trim(TrimType.TRANSPARENT,true,true,true,true);
+
+	if(split.length == 2){
+		split = split[1].split("x");
+		var width = parseInt(split[0],10);
+		var height = parseInt(split[1],10);
+
+		document.resizeCanvas(width, height);  
+	}
 }
 
 function saveFunc(resolution) {
