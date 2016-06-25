@@ -10,6 +10,7 @@
 
 
 // Photoshop variables
+var originalResolution = 2;
 var resolutionsObj = {
 
 		xxxxhdpi : {
@@ -51,18 +52,18 @@ function init() {
 }
 
 function deleteFile(resolution){
-	var split = activeLayer.name.split(":");
+	var split = app.activeDocument.activeLayer.name.split(":");
 
 	var fileName;
 	if(split.length != 2){
-	    fileName = activeLayer.name;
+	    fileName = app.activeDocument.activeLayer.name;
 	}else{
 	    fileName=split[0];
 	}
 	fileName = fileName.replace(/\.[^\.]+$/, '');
 
 
-	var docFolder = Folder(docPath + '/drawable-' + resolution);
+	var docFolder = Folder(app.activeDocument.path + '/drawable-' + resolution);
 
 	var saveFile = File(docFolder + "/" + fileName + ".png");
 	saveFile.remove();
