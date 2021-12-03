@@ -1,7 +1,7 @@
 # AndroidAssetExporter
 Script file for adobe photoshop for exporting android assets as png in one click for four screen densities.
 
-##What does it do?
+## What does it do?
 
 1. Duplicate focused layer to new document
 2. Trim transparent pixels
